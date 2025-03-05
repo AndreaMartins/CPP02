@@ -5,22 +5,29 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: andmart2 <andmart2@student.42barcelona.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/03/05 19:34:23 by andmart2          #+#    #+#             */
-/*   Updated: 2025/03/05 20:31:10 by andmart2         ###   ########.fr       */
+/*   Created: 2025/03/05 19:58:55 by andmart2          #+#    #+#             */
+/*   Updated: 2025/03/05 20:34:53 by andmart2         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Fixed.hpp"
+#include "Point.hpp"
 
 int	main(void)
 {
-	Fixed a;
-	Fixed b(a);
-	Fixed c;
+	Point A(0, 0);
+	Point B(4, 0);
+	Point C(0, 4);
+	Point P(1, 1);
+	Point Q(-5, 10);
 
-	c = b;
-	std::cout << a.getRawBits() << std::endl;
-	std::cout << b.getRawBits() << std::endl;
-	std::cout << c.getRawBits() << std::endl;
+	if (bsp(A, B, C, P))
+		std::cout << "Point P is inside triangle ABC." << std::endl;
+	else
+		std::cout << "Point P is outside triangle ABC." << std::endl;
+	if (bsp(A, B, C, Q))
+		std::cout << "Point P is inside triangle ABC." << std::endl;
+	else
+		std::cout << "Point P is outside triangle ABC." << std::endl;
 	return (0);
 }
